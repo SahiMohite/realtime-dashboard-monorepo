@@ -1,0 +1,18 @@
+{
+  "name": "realtime-stream-dashboard-monorepo",
+  "version": "1.0.0",
+  "description": "Real-Time Stream Processing Dashboard using Redis Pub/Sub.",
+  "private": true,
+  "scripts": {
+    "start:worker": "cd data-worker && python worker.py",
+    "start:server": "cd api-server && node index.js",
+    "start:client": "cd client && npm run dev",
+    "start:all": "echo 'Starting all components... Ensure Python VENV is active for worker!' && concurrently \"npm run start:worker\" \"npm run start:server\" \"npm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}
